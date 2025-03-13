@@ -4,17 +4,20 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import ProductCard from "./ProductCard";
 
-const NewModels = () => {
-  const data = Array(10).fill(1);
+const NewModels = ({ products }) => {
   return (
     <>
-      <h2>Brand new models</h2>
+      <h2 className="font-extrabold text-[22px] leading-[140%] mb-6 sm:mt-16">
+        Brand new models
+      </h2>
+
       <Swiper width={272} spaceBetween={16}>
-        {data.map(() => (
-          <SwiperSlide key={Math.random()}>
-            <ProductCard />
-          </SwiperSlide>
-        ))}
+        {products &&
+          products.map((phone) => (
+            <SwiperSlide key={phone.id}>
+              <ProductCard product={phone} />
+            </SwiperSlide>
+          ))}
       </Swiper>
     </>
   );

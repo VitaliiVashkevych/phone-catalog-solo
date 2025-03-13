@@ -1,8 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const Header = () => {
   return (
-    <header className="h-[48px] xl:h-[64px] pl-4 xl:pl-6 justify-between items-center flex border-b-1 border-[#E2E6E9] box-border">
+    <header className="h-[48px] xl:h-[64px] pl-4 xl:pl-6 justify-between items-center flex border-b-1 border-[#E2E6E9] box-border w-full">
       <Image
         src="/Logo.svg"
         height={22}
@@ -16,13 +17,33 @@ const Header = () => {
       </div>
 
       <div className="hidden sm:flex gap-8 xl:gap-12">
-        <Image src="/Logo.svg" height={22} width={64} alt="Logo" className="xl:hidden"/>
-        <Image src="/Logo.svg" height={28} width={80} alt="Logo" className="hidden xl:block"/>
+        <Image
+          src="/Logo.svg"
+          height={22}
+          width={64}
+          alt="Logo"
+          className="xl:hidden"
+        />
+        <Image
+          src="/Logo.svg"
+          height={28}
+          width={80}
+          alt="Logo"
+          className="hidden xl:block"
+        />
         <ul className="flex gap-8 xl:gap-16 text-[#89939A]">
-          <li className="uppercase">home</li>
-          <li className="uppercase">phones</li>
-          <li className="uppercase">tablets</li>
-          <li className="uppercase">accessories</li>
+          <li className="uppercase">
+            <Link href={"/home"}>home</Link>
+          </li>
+          <li className="uppercase">
+            <Link href={"/phones"}>phones</Link>
+          </li>
+          <li className="uppercase">
+            <Link href={"/tablets"}>tablets</Link>
+          </li>
+          <li className="uppercase">
+            <Link href={"/accessories"}>accessories</Link>
+          </li>
         </ul>
       </div>
 

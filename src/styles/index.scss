@@ -1,0 +1,33 @@
+@import "./mixins.scss";
+
+@font-face {
+  font-family: Mont800;
+  src: url("../../src/assets/fonts/Mont-Bold.otf");
+  font-weight: 800;
+}
+@font-face {
+  font-family: Mont700;
+  src: url("../../src/assets/fonts/Mont-SemiBold.otf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: Mont500;
+  src: url("../../src/assets/fonts/Mont-Regular.otf");
+  font-weight: 500;
+}
+
+:root {
+  --elements: #e2e6e9;
+  --secondary: #89939a;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

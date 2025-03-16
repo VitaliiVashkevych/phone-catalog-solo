@@ -1,0 +1,66 @@
+@import "../../styles/mixins.scss";
+
+%slider-height-responsive {
+  height: 320px;
+
+  @include on-tablet640 {
+    height: 200px;
+  }
+
+  @include on-desktop1200 {
+    height: 400px;
+  }
+}
+.main_swiper {
+  display: flex;
+  column-gap: 16px;
+  margin-top: 32px;
+
+  @include on-tablet640 {
+    margin-top: 40px;
+  }
+
+  @include on-desktop1200 {
+    margin-top: 60px;
+  }
+}
+.main_swiper_slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--primary);
+}
+.img_mobile {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.main_swiper .swiper-wrapper {
+  @extend %slider-height-responsive;
+}
+.main_swiper .swiper-pagination {
+  position: relative;
+  bottom: -4px;
+}
+.main_swiper .swiper-pagination-bullet {
+  height: 4px;
+  width: 14px;
+  border-radius: 0;
+  background: var(--elements);
+}
+.main_swiper .swiper-pagination-bullet-active {
+  background: var(--primary);
+}
+.main_swiper-button {
+  @extend %slider-height-responsive;
+  background: white;
+  border: 1px solid var(--icons);
+  width: 32px;
+
+  display: none;
+
+  @include on-tablet640 {
+    display: block;
+  }
+}

@@ -1,0 +1,22 @@
+.card {
+  width: 272px;
+  height: 506px;
+  padding: 32px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--elements);
+}
+.img {
+  height: 196px;
+  object-fit: contain;
+}
+.name {
+  font-family: Mont500;
+  font-size: 14px;
+  line-height: 21px;
+  color: (--primary);
+}
+.price_wrapper {
+  display: flex;
+}

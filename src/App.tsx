@@ -1,6 +1,7 @@
 import Header from "./components/Header/Header"
 import Menu from "./components/Menu/Menu"
 import { AppContextProvider } from "./context/AppContext"
+import HomePage from "./pages/HomePage"
 
 function App() {
 
@@ -8,6 +9,7 @@ function App() {
     <AppContextProvider>
       <Header />
       <Menu />
+      <HomePage />
     </AppContextProvider>
   )
 }

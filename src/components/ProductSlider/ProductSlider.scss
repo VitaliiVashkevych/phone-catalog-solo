@@ -1,0 +1,38 @@
+@import '../../styles/mixins.scss';
+
+.ProductSlider__container {
+  margin-top: 56px;
+
+  @include on-tablet640 {
+    margin-top: 64px;
+  }
+  @include on-desktop1200 {
+    margin-top: 80px;
+  }
+}
+.ProductSlider__title {
+  font-family: Mont800;
+  font-size: 22px;
+  line-height: 140%;
+  color: var(--primary);
+}
+.ProductSlider__buttons {
+  display: flex;
+  gap: 16px;
+}
+.ProductSlider__button {
+  width: 32px;
+  height: 32px;
+  box-sizing: border-box;
+  border: 1px solid var(--elements);
+  background-color: white;
+}
+.ProductSlider__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ProductSlider-swiper .swiper-slide {
+  width: 272px;
+  margin-top: 24px;
+}

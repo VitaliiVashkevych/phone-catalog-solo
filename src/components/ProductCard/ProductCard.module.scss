@@ -1,6 +1,6 @@
 .card {
   width: 272px;
-  height: 506px;
+  // height: 506px;
   padding: 32px;
   box-sizing: border-box;
   display: flex;
@@ -16,7 +16,72 @@
   font-size: 14px;
   line-height: 21px;
   color: (--primary);
+  margin-top: 24px;
 }
 .price_wrapper {
   display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+.characteristic_wrapper {
+  display: flex;
+  justify-content: space-between;
+  font-family: Mont500;
+  font-size: 12px;
+  margin-top: 8px;
+}
+.characteristic_wrapper_block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.characteristic_text {
+  color: var(--secondary);
+}
+.characteristic_text_value {
+  color: var(--primary);
+}
+.values {
+  text-align: end;
+}
+.button_wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 16px;
+}
+.added {
+  height: 40px;
+  background: var(--primary);
+  color: white;
+  font-family: Mont700;
+  font-size: 14px;
+  line-height: 21px;
+  width: 100%;
+  flex: 1;
+  border: none;
+}
+.favourite {
+  height: 40px;
+  width: 40px;
+  border: 1px solid var(--elements);
+  background-color: white;
+}
+.price {
+  font-size: 22px;
+  font-family: Mont700;
+  line-height: 140%;
+  color: var(--primary);
+}
+.priceDiscount {
+  font-size: 22px;
+  font-family: Mont500;
+  line-height: 140%;
+  color: var(--secondary);
+  text-decoration: line-through;
+}
+.divider {
+  width: 100%;
+  border: 1px solid var(--elements);
+  margin: 8px 0;
 }

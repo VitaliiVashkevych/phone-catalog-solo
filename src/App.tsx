@@ -1,3 +1,4 @@
+import Footer from "./components/Footer/Footer"
 import Header from "./components/Header/Header"
 import Menu from "./components/Menu/Menu"
 import { AppContextProvider } from "./context/AppContext"
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <Menu />
       <HomePage />
+      <Footer />
     </AppContextProvider>
   )
 }

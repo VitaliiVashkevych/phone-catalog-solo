@@ -1,0 +1,73 @@
+@import "../../styles/mixins.scss";
+
+.footer {
+  border-top: 1px solid var(--elements);
+  display: flex;
+  margin-top: 64px;
+
+  @include on-tablet640 {
+    margin-top: 80px;
+  }
+}
+.container {
+  max-width: 1200px;
+  padding: 32px 16px;
+  box-sizing: border-box;
+  display: flex;
+  justify-self: center;
+  width: 100%;
+  flex-direction: column;
+
+  @include on-tablet640 {
+    padding: 32px 24px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  @include on-desktop1200 {
+    padding: 32px 32px;
+  }
+}
+.logo {
+  width: 89px;
+}
+.nav {
+  margin-top: 32px;
+  font-family: Mont800;
+  font-size: 12px;
+  line-height: 11px;
+  color: var(--secondary);
+
+  @include on-tablet640 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @include on-tablet640 {
+    flex-direction: row;
+  }
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+.button {
+  width: 40px;
+  height: 40px;
+  border-radius: 0;
+  border: 1px solid var(--icons);
+  background: white;
+}
+.to_top {
+  font-family: Mont700;
+  font-size: 12px;
+  line-height: 100%;
+  color: var(--secondary);
+}

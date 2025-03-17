@@ -1,8 +1,8 @@
-import PhonePageLayout from "../components/PhonePageLayout/PhonePageLayout";
+import ProductPageLayout from "../components/PhonePageLayout/ProductPageLayout";
 
 const PhonePage = () => {
   return (
-    <PhonePageLayout />
+    <ProductPageLayout productName={'Mobile phones'}/>
   )
 }
 

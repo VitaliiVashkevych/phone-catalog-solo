@@ -81,3 +81,36 @@
     gap: 48px;
   }
 }
+.active {
+  color: var(--primary);
+  text-decoration: none;
+  position: relative;
+  display: block;
+  height: 48px;
+  align-content: center;
+
+  @include on-desktop1200 {
+    height: 64px;
+  }
+
+  &::after {
+    content: "";
+    height: 3px;
+    width: 100%;
+    background: var(--primary);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+.inactive {
+  color: var(--secondary);
+  text-decoration: none;
+  display: block;
+  height: 48px;
+  align-content: center;
+  @include on-desktop1200 {
+    height: 64px;
+  }
+}

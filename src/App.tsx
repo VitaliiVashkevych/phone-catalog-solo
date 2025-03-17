@@ -5,23 +5,26 @@ import { AppContextProvider } from "./context/AppContext";
 import HomePage from "./pages/HomePage";
 import { BrowserRouter, Route, Routes } from "react-router";
 import PhonePage from "./pages/PhonePage";
+import TabletsPage from "./pages/TabletsPage";
+import AccessoriesPage from "./pages/AccessoriesPage";
 
 function App() {
   return (
-    <AppContextProvider>
-      <Header />
-      <Menu />
+    <BrowserRouter>
+      <AppContextProvider>
+        <Header />
+        <Menu />
 
-      <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/phones" element={<PhonePage />} />
-          <Route path="/phones/test/123" element={<PhonePage />} />
+          <Route path="/tablets" element={<TabletsPage />} />
+          <Route path="/accessories" element={<AccessoriesPage />} />
         </Routes>
-      </BrowserRouter>
 
-      <Footer />
-    </AppContextProvider>
+        <Footer />
+      </AppContextProvider>
+    </BrowserRouter>
   );
 }
 

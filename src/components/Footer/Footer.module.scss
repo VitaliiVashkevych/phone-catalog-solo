@@ -4,6 +4,7 @@
   border-top: 1px solid var(--elements);
   display: flex;
   margin-top: 64px;
+  justify-content: center;
 
   @include on-tablet640 {
     margin-top: 80px;

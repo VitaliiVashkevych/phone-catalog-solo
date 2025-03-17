@@ -1,6 +1,6 @@
 import { Product } from "../types/Product";
 
-export const getProducts = async (product: string): Promise<Product[]> => {
+export const fetchProducts = async (product: string): Promise<Product[]> => {
   const URL = `http://localhost:5173/public/api/${product}.json`;
   const response = await fetch(URL);
 

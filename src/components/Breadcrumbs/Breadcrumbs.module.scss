@@ -1,0 +1,19 @@
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+}
+.arrow {
+  margin: 0 8px;
+}
+.el {
+  font-family: Mont500;
+  font-size: 12px;
+  line-height: 100%;
+  color: var(--secondary);
+  text-transform: capitalize;
+}
+.icon {
+  width: 14px;
+  height: 14px;
+}

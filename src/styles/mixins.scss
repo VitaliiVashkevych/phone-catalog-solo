@@ -8,3 +8,10 @@
     @content;
   }
 }
+@mixin grid {
+  display: grid;
+  place-items: center;
+  column-gap: 16px;
+  row-gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(272px, 1fr));
+}

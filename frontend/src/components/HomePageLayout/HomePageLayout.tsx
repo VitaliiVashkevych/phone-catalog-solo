@@ -7,11 +7,20 @@ import ShopByCategory from "../ShopByCategory/ShopByCategory";
 import { fetchProducts } from "../../functions/fetchProducts";
 
 const HomePageLayout = () => {
-  const [products, setProducts] = useState<Product[]>([]);
+  const [newProducts, setNewProducts] = useState<Product[]>([]);
+  const [discountedProducts, setDiscountedProducts] = useState<Product[]>([]);
   useEffect(() => {
     const getProducts = async () => {
       const response = await fetchProducts("phones");
-      setProducts(response.slice(0, 8));
+
+      setNewProducts(
+        response.products.filter(
+          (product) => product.processor === "Apple A16 Bionic"
+        )
+      );
+      setDiscountedProducts(
+        response.products.filter((product) => product.priceDiscount <= 700)
+      );
     };
     getProducts();
   }, []);
@@ -20,11 +29,11 @@ const HomePageLayout = () => {
       <h1 className={S.title}>Welcome to Nice Gadgets store!</h1>
       <MainSlider />
 
-      <ProductSlider products={products} sliderName="Brand new models" />
+      <ProductSlider products={newProducts} sliderName="Brand new models" />
 
       <ShopByCategory />
 
-      <ProductSlider products={products} sliderName="Hot Prices" />
+      <ProductSlider products={discountedProducts} sliderName="Hot Prices" />
     </div>
   );
 };

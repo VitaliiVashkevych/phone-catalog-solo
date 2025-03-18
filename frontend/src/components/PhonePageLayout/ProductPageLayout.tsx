@@ -13,13 +13,15 @@ type Props = {
 
 const ProductPageLayout: React.FC<Props> = ({ productName }) => {
   const [products, setProducts] = useState<Product[]>([]);
+  const [productsQuantity, setProductsQuantity] = useState<number>(0);
 
   const pathname = window.location.pathname.slice(1);
 
   useEffect(() => {
     const getProducts = async () => {
       const response = await fetchProducts(pathname);
-      setProducts(response.slice(0, 20));
+      setProducts(response.products.slice(0, 20));
+      setProductsQuantity(response.productsQuantity);
     };
     try {
       getProducts();
@@ -33,7 +35,7 @@ const ProductPageLayout: React.FC<Props> = ({ productName }) => {
         <>
           <Breadcrumbs />
           <h1 className={S.title}>{productName}</h1>
-          <p className={S.quantity}>{products.length} models</p>
+          <p className={S.quantity}>{productsQuantity} models</p>
           <h1 style={{ background: "red" }}>FILTER</h1>
 
           <div className={S.grid}>

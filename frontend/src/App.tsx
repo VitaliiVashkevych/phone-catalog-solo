@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import PhonePage from "./pages/PhonePage";
 import TabletsPage from "./pages/TabletsPage";
 import AccessoriesPage from "./pages/AccessoriesPage";
+import FavouritesPage from "./pages/FavouritesPage";
 
 function App() {
   return (
@@ -20,12 +21,18 @@ function App() {
           <Route path="/phones" element={<PhonePage />} />
           <Route path="/tablets" element={<TabletsPage />} />
           <Route path="/accessories" element={<AccessoriesPage />} />
+          <Route path="/favourites" element={<FavouritesPage />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
 
         <Footer />
       </AppContextProvider>
     </BrowserRouter>
   );
+}
+
+function Login() {
+  return <h2>Login</h2>
 }
 
 export default App;

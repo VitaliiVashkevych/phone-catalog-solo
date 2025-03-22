@@ -1,3 +1,4 @@
+import { useAppContext } from "../../hooks/useAppContext";
 import { Product } from "../../types/Product";
 import S from "./ProductCard.module.scss";
 
@@ -6,6 +7,17 @@ type Props = {
 };
 
 const ProductCard: React.FC<Props> = ({ product }) => {
+  const { addToFavourites, removeFromFavourites, favourites } = useAppContext();
+  const isFavourite = favourites.some((item) => item.id === product.id);
+
+  const handleFavourite = () => {
+    if (isFavourite) {
+      removeFromFavourites(product);
+    } else {
+      addToFavourites(product);
+    }
+  };
+
   return (
     <article className={S.card}>
       <img src={`/${product.images[0]}`} alt="" className={S.img} />
@@ -32,7 +44,9 @@ const ProductCard: React.FC<Props> = ({ product }) => {
 
       <div className={S.button_wrapper}>
         <button className={S.added}>Add to cart</button>
-        <button className={S.favourite}>&lt;3</button>
+        <button className={S.favourite} onClick={handleFavourite}>
+          &lt;3
+        </button>
       </div>
     </article>
   );

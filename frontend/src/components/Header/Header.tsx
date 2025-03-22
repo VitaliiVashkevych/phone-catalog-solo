@@ -60,9 +60,12 @@ const Header = () => {
       </div>
 
       <div className={S.header__buttons}>
-        <div className={S.header__menu_wrapper}>
-          <img src="/public/heart.svg" alt="" />
-        </div>
+        <NavLink to="/favourites" >
+          <div className={S.header__menu_wrapper}>
+            <img src="/public/heart.svg" alt="" />
+          </div>
+        </NavLink>
+
         <div className={S.header__menu_wrapper}>
           <img src="/public/cart.svg" alt="" />
         </div>

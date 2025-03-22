@@ -15,8 +15,11 @@ app.get("/phones", async (_, res) => {
 
   res.json({products, productsQuantity: productsQuantity[0].count});
 });
-app.get("/tablets", async (_, res) => {
-  const products = await db.query.TabletsTable.findMany();
+app.get("/tablets", async (req, res) => {
+  const limit = Number(req.query.limit);
+  const offset = Number(req.query.offset);
+
+  const products = await db.query.TabletsTable.findMany({ limit, offset });
   const productsQuantity = await db.select({ count: count() }).from(TabletsTable);
 
   res.json({products, productsQuantity: productsQuantity[0].count});

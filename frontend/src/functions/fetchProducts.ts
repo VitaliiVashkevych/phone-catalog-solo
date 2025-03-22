@@ -1,8 +1,10 @@
 import { Product } from "../types/Product";
-
-export const fetchProducts = async (product: string): Promise<{products: Product[], productsQuantity: number}> => {
-  const URL = `http://localhost:3000/${product}`;
-  console.log(URL);
+type Options = {
+  limit: number;
+  offset: number;
+}
+export const fetchProducts = async (product: string, options: Options): Promise<{products: Product[], productsQuantity: number}> => {
+  const URL = `http://localhost:3000/${product}?limit=${options.limit}&offset=${options.offset}`;
   
   const response = await fetch(URL);
 

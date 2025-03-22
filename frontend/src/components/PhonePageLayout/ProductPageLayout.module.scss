@@ -39,3 +39,35 @@
 .grid {
   @include grid;
 }
+
+.pagination {
+  width: 248px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  gap: 8px;
+}
+
+.element {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--icons);
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.button {
+  @extend .element;
+  margin: 0 8px;
+}
+
+.element_active {
+  @extend .element;
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
